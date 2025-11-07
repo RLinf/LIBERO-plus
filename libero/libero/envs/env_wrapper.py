@@ -149,7 +149,8 @@ def fog(x, severity=1):
 
     x = np.array(x) / 255.
     max_val = x.max()
-    x += c[0] * plasma_fractal(wibbledecay=c[1])[:256, :256][..., np.newaxis]
+    height_x, weight_x = x.shape[0], x.shape[1]
+    x += c[0] * plasma_fractal(wibbledecay=c[1])[:height_x, :weight_x][..., np.newaxis]
     return np.clip(x * max_val / (max_val + c[0]), 0, 1) * 255
 
 def glass_blur(x, severity=1):
@@ -159,10 +160,12 @@ def glass_blur(x, severity=1):
 
     x = np.uint8(gaussian(np.array(x) / 255., sigma=c[0], channel_axis=-1) * 255)
 
+    height_x, weight_x = x.shape[0], x.shape[1]
+
     # locally shuffle pixels
     for i in range(c[2]):
-        for h in range(224 - c[1], c[1], -1):
-            for w in range(224 - c[1], c[1], -1):
+        for h in range(height_x - c[1], c[1], -1):
+            for w in range(weight_x - c[1], c[1], -1):
                 dx, dy = np.random.randint(-c[1], c[1], size=(2,))
                 h_prime, w_prime = h + dy, w + dx
                 # swap
