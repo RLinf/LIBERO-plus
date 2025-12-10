@@ -1,11 +1,11 @@
 from robosuite.utils.mjcf_utils import new_site
 
-from libero.libero.envs.bddl_base_domain import BDDLBaseDomain, register_problem
-from libero.libero.envs.robots import *
-from libero.libero.envs.objects import *
-from libero.libero.envs.predicates import *
-from libero.libero.envs.regions import *
-from libero.libero.envs.utils import rectangle2xyrange
+from liberoplus.liberoplus.envs.bddl_base_domain import BDDLBaseDomain, register_problem
+from liberoplus.liberoplus.envs.robots import *
+from liberoplus.liberoplus.envs.objects import *
+from liberoplus.liberoplus.envs.predicates import *
+from liberoplus.liberoplus.envs.regions import *
+from liberoplus.liberoplus.envs.utils import rectangle2xyrange
 
 
 @register_problem
@@ -32,7 +32,7 @@ class YOUR_CLASS_NAME(BDDLBaseDomain):
                 {"scene_xml": "scenes/libero_kitchen_tabletop_base_style.xml"}
             )
         if "scene_properties" not in kwargs or kwargs["scene_properties"] is None:
-            # The scene properties need to be specified in libero/envs/arenas/style.py.
+            # The scene properties need to be specified in liberoplus/envs/arenas/style.py.
             kwargs.update(
                 {
                     "scene_properties": {

@@ -14,27 +14,27 @@ import numpy as np
 from robosuite.models.objects import MujocoXMLObject
 from robosuite.utils.mjcf_utils import xml_path_completion
 
-from libero.libero.envs.base_object import register_object
+from liberoplus.liberoplus.envs.base_object import register_object
 
 import pathlib
 
-from libero.libero.envs.base_object import (
+from liberoplus.liberoplus.envs.base_object import (
     register_visual_change_object,
     register_object,
 )
-from libero.libero.utils.mu_utils import register_mu, InitialSceneTemplates
-from libero.libero.utils.task_generation_utils import register_task_info, get_task_info, generate_bddl_from_task_info
+from liberoplus.liberoplus.utils.mu_utils import register_mu, InitialSceneTemplates
+from liberoplus.liberoplus.utils.task_generation_utils import register_task_info, get_task_info, generate_bddl_from_task_info
 
 
 import re
-from libero.libero.envs import objects
-from libero.libero.utils.bddl_generation_utils import *
-from libero.libero.envs.objects import OBJECTS_DICT
-from libero.libero.utils.object_utils import get_affordance_regions
+from liberoplus.liberoplus.envs import objects
+from liberoplus.liberoplus.utils.bddl_generation_utils import *
+from liberoplus.liberoplus.envs.objects import OBJECTS_DICT
+from liberoplus.liberoplus.utils.object_utils import get_affordance_regions
 
-from libero.libero.utils.mu_utils import register_mu, InitialSceneTemplates
+from liberoplus.liberoplus.utils.mu_utils import register_mu, InitialSceneTemplates
 
-from libero.libero.envs import OffScreenRenderEnv
+from liberoplus.liberoplus.envs import OffScreenRenderEnv
 from PIL import Image
 
 import torch

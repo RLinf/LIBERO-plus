@@ -5,8 +5,8 @@ import h5py
 import argparse
 import numpy as np
 
-from libero.libero.envs import OffScreenRenderEnv
-from libero.libero import benchmark, get_libero_path
+from liberoplus.liberoplus.envs import OffScreenRenderEnv
+from liberoplus.liberoplus import benchmark, get_libero_path
 
 
 def render_task(task, bddl_file, init_states, demo_file):
